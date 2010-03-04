@@ -33,7 +33,7 @@ Date Modified Reason
 ============= ==================================================================
 2010-03-02    Document Created
 2010-03-04    Prime sieve completed.
-2010-03-04    Printing completed. Assignment completed.
+2010-03-04    Printing completed.
 ============= ==================================================================
 */
 
