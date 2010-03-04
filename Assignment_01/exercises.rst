@@ -1,4 +1,5 @@
 1.  Define the truth table (use truth table) for:
+    
     a.  (P && Q) || R
         
         === === === ====== =============
