@@ -4,7 +4,7 @@ Date Created: 2010-03-02
 
 Purpose
 =======
-Solution to Programming Exercise 4.24:
+Solution to Programming Exercise 6.24:
 
     Adding two Matrices
     

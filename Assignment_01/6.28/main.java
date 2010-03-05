@@ -4,7 +4,7 @@ Date Created: 2010-03-02
 
 Purpose
 =======
-Solution to Programming Exercise 4.28:
+Solution to Programming Exercise 6.28:
 
     Game: TicTacToe
     
