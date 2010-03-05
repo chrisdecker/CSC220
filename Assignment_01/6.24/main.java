@@ -163,6 +163,13 @@ class Matrix {
         if(!(this.height == other.height && this.width == other.width)) {
             throw new IllegalArgumentException("Matrix addition requires two "+
                 "matrixes of identical dimensions.");
+            // actually, that isn't true. There is another type of matrix
+            // addition that makes a matrix with a width of the sum of the
+            // widths and height of the sum of the heights of the source
+            // matrices.
+            // In that form, the first source matrix is in the upper left corner
+            // of the resulting matrix, while the second source matrix is in the
+            // lower right corner.
         }
         
         int height = this.height;
@@ -170,6 +177,8 @@ class Matrix {
         
         int[][] result_src = new int[height][width];
         
+        // loop through all the elements and add each corresponding pair
+        // together to get the result element.
         for(int i = 0; i < height; i++) {
             for(int j = 0; j < width; j++) {
                 result_src[i][j] = this.elements[i][j] + other.elements[i][j];
@@ -181,6 +190,12 @@ class Matrix {
         return result;
     }
     
+    /**
+     * Builds a human readable representation of the matrix.
+     * 
+     * @return String
+     * 
+     */
     public String str() {
         String output = "\n";
         
