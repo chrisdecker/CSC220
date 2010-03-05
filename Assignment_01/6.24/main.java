@@ -30,6 +30,8 @@ Document History
 
 */
 
-class main (String[] args) {
-    // code
+class main {
+    public static void main (String[] args) {
+    }
 }
+
