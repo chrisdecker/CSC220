@@ -13,7 +13,7 @@ Solution to Programming Exercise 4.28:
     a two dimensional array to represent a TicTacToe boeard. Here is a sample
     run of the program:
     
-    .. code-block::
+    .. code-block::rst
         
         001
         001
