@@ -51,7 +51,7 @@ class main {
         int counter = 0;
         for (int i=0; i < primes.length; i++) {
             if (primes[i]) {
-                System.out.printf("%9d", i);
+                System.out.printf("%-9d", i);
                 
                 if (counter % 8 == 7) {
                     System.out.print("\n");
