@@ -2,7 +2,7 @@ Assignment Directory Structure
 ==============================
 
 ============================== =================================================
-Node            Purpose
+Node                           Purpose
 ============================== =================================================
 /                              Homework root
 /Assignment\_\d+               The actual assignments
