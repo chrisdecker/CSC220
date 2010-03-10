@@ -169,10 +169,13 @@ Chapter 8
                     increment(myCount, times);
                 }
                 
-                public static void increment(Count c, int times) {
-                    c.count++;
-                    times++;
-                }
+                System.out.println("count is " + myCount.count);
+                System.out.println("times is " + times);
+            }
+            
+            public static void increment(Count c, int times) {
+                c.count++;
+                times++;
             }
         }
     
@@ -190,7 +193,20 @@ Chapter 8
             }
         }
     
+    ::
+        
+        count is 101
+        times is 0
     
+    The difference between passing a primitive-type argument and a
+    reference-type argument is that reference-type arguments are pointers to a
+    location in memory. This pointer is a primitive-type and is passed by value
+    into and reconstructed during entry into the function, where it points to
+    the same location in memory as the original variable.
+    
+    Since both the argument inside the function and the variable outside the
+    function point to the same memory location, changes made to one are
+    reflected in the other.
 
 18. Show the printout of the following code:
     
