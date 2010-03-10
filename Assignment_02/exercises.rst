@@ -36,6 +36,8 @@ Chapter 8
             }
         }
     
+    There's no constructor to accept the integer argument.
+    
     .. code-block:: java
         
         // (b)
@@ -46,6 +48,8 @@ Chapter 8
                 t.x();
             }
         }
+    
+    Method `ShowErrors.x()` doesn't exist.
     
     .. code-block:: java
         
@@ -59,6 +63,9 @@ Chapter 8
                 c = new Circle();
             }
         }
+    
+    `c` is a null pointer until initialized. Calling any instance method or
+    instance attribute before initializing the object will fail.
     
     .. code-block:: java
         
@@ -75,7 +82,7 @@ Chapter 8
             int value = 2;
         }
     
-    
+    No constructor to handle the floating value provided.
 
 6.  What is the printout of the following code?
     
@@ -151,6 +158,17 @@ Chapter 8
             
             Circle c = new Circle();
         }
+    
+    `Foo.method1` is an instance method and cannot be called from a static
+    method.
+    
+    Instance method or variable from static method
+        No.
+    
+    Static method or variable from instance method
+        Yes.
+    
+    
 
 14. What are the benefits of data encapsulation?
 
