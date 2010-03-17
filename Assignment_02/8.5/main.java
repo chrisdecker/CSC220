@@ -40,6 +40,8 @@ Date Modified Reason
 
 */
 
+import java.util.GregorianCalendar;
+
 /**
  * Driver class
  */
@@ -48,14 +50,14 @@ class main {
 		GregorianCalendar date = new GregorianCalendar();
 		
 		System.out.println(String.format(
-			"Current Date: %s", Calendar.print_date(date)));
+			"Current Date: %s", main.print_date(date)));
 		
 		long millis = 1234567898765L;
 		date.setTimeInMillis(millis);
 		System.out.println(String.format(
 			"Date at %d milli-seconds past Unix Epoch: %s",
 			millis,
-			Calendar.print_date(date)));
+			main.print_date(date)));
 	}
 	
 	/**
