@@ -29,7 +29,11 @@ Chapter 9
 14. Write three statements to reverse a string `s` using the reverse method in
     the `StringBuilder` class.
     
-    
+    .. code-block:: java
+        
+        s.reverse();
+        s = s.reverse();
+        StringBuilder s2 = s.reverse();
 
 18. Show the output of the following program:
     
