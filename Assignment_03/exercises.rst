@@ -6,32 +6,32 @@ Chapter 9
     
     .. code-block:: java
         
-        String s = new String("new string");
-        String s3 = s1 + s2;
-        String s3 = s1 - s2;
-        s1 == s2;
-        s1 >= s2
-        s1.compareTo(s2);
-        int i = s1.length();
-        char c = s1(0);
-        char c = s1.charAt(s1.length());
-    
-    
+        String s = new String("new string"); // Correct
+        String s3 = s1 + s2;                 // Correct (concatenation)
+        String s3 = s1 - s2;                 // Incorrect (interuptenation?)
+        s1 == s2;                            // Correct (but mostly useless)
+        s1 >= s2                             // Correct (but again useless)
+        s1.compareTo(s2);                    // Correct
+        int i = s1.length();                 // Correct
+        char c = s1(0);                      // Correct
+        char c = s1.charAt(s1.length());     // Incorrect (index out of bounds)
 
 6.  Suppose string `s` is created using `new String()`; what is `s.length()`?
     
-    
+    Zero.
 
 10. How do you determine whether a character is in lowercase or uppercase?
     
-    
+    .. code-block:: java
+        
+        Character.isLowerCase();
 
 14. Write three statements to reverse a string `s` using the reverse method in
     the `StringBuilder` class.
     
     
 
-18. Show the output of tthe following program:
+18. Show the output of the following program:
     
     .. code-block:: java
         
@@ -50,7 +50,14 @@ Chapter 9
             }
         }
     
+    ::
+        
+        Java
     
+    String `s` is complex and was passed in by reference, However, concatenating
+    strings creates a new string, so the local String variable `s` is given a
+    new memory address pointing to the new string data. The orginating variable
+    is later printed still containing the original string data.
 
 22. How do you check whether a file already exists? How do you delete a file?
     How do you rename a file/ can you find the file size (the number of bytes)
@@ -76,5 +83,11 @@ Chapter 9
         double doubleValue = input.nextDouble();
         String line = input.nextLine();
     
-    
+    =========== =====
+    Variable    Value
+    =========== =====
+    intValue    45   
+    doubleValue 57.8 
+    line        789  
+    =========== =====
 
