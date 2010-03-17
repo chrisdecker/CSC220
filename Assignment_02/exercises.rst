@@ -50,6 +50,10 @@ Chapter 8
         }
     
     Method `ShowErrors.x()` doesn't exist.
+
+    .. raw:: pdf
+        
+        PageBreak
     
     .. code-block:: java
         
@@ -101,10 +105,18 @@ Chapter 8
         
         false
     
+    .. raw:: pdf
+        
+        PageBreak
 
 8.  How do you create a JFrame, set a title in the frame, and display a frame?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JFrame;
+        
+        JFrame frame = new JFrame("Set a title in the frame");
+        frame.setVisibile(true);
 
 10. Suppose class `Foo` is defined in (a). Let f be an instance of `Foo`. Which
     of the statements in (b) are correct?
@@ -135,7 +147,9 @@ Chapter 8
         Foo.imethod();             // Incorrect (not a static method)
         Foo.smethod();             // Correct
     
-    
+    .. raw:: pdf
+        
+        PageBreak
 
 12. Can you invoke an instance method or reference an instance variable from a
     static method? Can you invoke a static method or reference a static variable
@@ -167,10 +181,27 @@ Chapter 8
     
     Static method or variable from instance method
         Yes.
-    
-    
 
 14. What are the benefits of data encapsulation?
+    
+    Apparently, it's to allow you to change the behaviour of a class without
+    running into problems with applications dependent on that class. When you
+    move from direct attribute access to indirect access through accessor
+    methods you change the interface other applications see, causing errors in
+    those applications.
+    
+    But only have accessor methods if absolutely necessary, even if you have
+    those methods, the interface can still change if you `suddenly need to
+    change the type of the field`_ (link). Instead, leave the data fields private, and
+    write instance methods that use those fields to do any work the class needs
+    to do.
+    
+    .. _suddenly need to change the type of the field:
+        http://www.javaworld.com/javaworld/jw-09-2003/jw-0905-toolbox.html?page=2
+    
+    .. raw:: pdf
+        
+        PageBreak
 
 16. Describe the difference between passing a parameter of a primitive type and
     passing a parameter of a reference type. Show the output of the following
@@ -225,6 +256,10 @@ Chapter 8
     Since both the argument inside the function and the variable outside the
     function point to the same memory location, changes made to one are
     reflected in the other.
+    
+    .. raw:: pdf
+        
+        PageBreak
 
 18. Show the printout of the following code:
     
@@ -273,6 +308,10 @@ Chapter 8
     ::
         
         a[0] = 2 a[1] = 1
+    
+    .. raw:: pdf
+        
+        PageBreak
     
     .. code-block:: java
         
@@ -331,6 +370,10 @@ Chapter 8
         
         t1's i = 2 and j = 1
         t2's i = 2 and j = 1
+    
+    .. raw:: pdf
+        
+        PageBreak
 
 20. What is wrong with the following code?
     
