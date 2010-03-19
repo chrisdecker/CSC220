@@ -66,7 +66,7 @@ class main {
         Scanner input = new Scanner(System.in);
         
         System.out.print("Enter a string: ");
-        String telephone = input.nextLine().toUpperCase();
+        String telephone = input.nextLine();
         String telephone2 = "";
         
         for(int i = 0; i < telephone.length(); i++) {
@@ -84,11 +84,23 @@ class main {
     }
     
     public static int getNumber(char uppercaseLetter) {
-        // ensure the character is valid.
-        if (uppercaseLetter >= 'A' && uppercaseLetter <= 'Z') {
+        // prep the character (just in case we get lower.)
+        uppercaseLetter = Character.toUpperCase(uppercaseLetter);        
+        
+        // We'll get this first since it's also a good way to determine if a
+        // character is valid for this operation. A non -1 response means that
+        // the character is at least in the lookup string.
+        int index_of_char = main.lookup.indexOf(uppercaseLetter);
+        
+        // The second check filters out numeric digits, since the first won't
+        // catch that. At first this was taking advantage of the nature of
+        // ASCII (all alpha characters are consecutive, so valid characters
+        // must fall in that range,) but the user may not be using ASCII (or
+        // Unicode) and there is at least one character set that does NOT have
+        // consecutive alpha characters, so this will work on that kind of set.
+        if (index_of_char != -1 && Character.isLetter(uppercaseLetter)) {
             // find the index of the space after the character group the given
             // character is in
-            int index_of_char = main.lookup.indexOf(uppercaseLetter);
             int index_of_sep  = main.lookup.indexOf(" ", index_of_char);
             
             // extract the digit for that group and convert to integer
