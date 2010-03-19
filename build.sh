@@ -36,7 +36,5 @@ for f in `ls $source/*/OUTPUT`; do
     echo -e "\n.. raw:: pdf\n    \n    PageBreak\n" >> $rst
 done;
 
-echo ""
-
 # Convert to PDF
 rst2pdf $rst -o $pdf
