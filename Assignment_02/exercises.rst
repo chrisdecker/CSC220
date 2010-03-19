@@ -50,10 +50,6 @@ Chapter 8
         }
     
     Method `ShowErrors.x()` doesn't exist.
-
-    .. raw:: pdf
-        
-        PageBreak
     
     .. code-block:: java
         
@@ -104,10 +100,6 @@ Chapter 8
     .. code-block:: java
         
         false
-    
-    .. raw:: pdf
-        
-        PageBreak
 
 8.  How do you create a JFrame, set a title in the frame, and display a frame?
     
@@ -146,10 +138,6 @@ Chapter 8
         System.out.println(Foo.s); // Correct
         Foo.imethod();             // Incorrect (not a static method)
         Foo.smethod();             // Correct
-    
-    .. raw:: pdf
-        
-        PageBreak
 
 12. Can you invoke an instance method or reference an instance variable from a
     static method? Can you invoke a static method or reference a static variable
@@ -192,14 +180,16 @@ Chapter 8
     
     But only have accessor methods if absolutely necessary, even if you have
     those methods, the interface can still change if you `suddenly need to
-    change the type of the field`_ (link). Instead, leave the data fields private, and
-    write instance methods that use those fields to do any work the class needs
-    to do.
+    change the type of the field`_ (link). Leave the data fields private, and
+    rather than make a multitude of get and set type functions write instance
+    methods that use those fields to do any work the class needs to do. Other
+    code should not need to take the attributes of a class and perform an action
+    with them, that class should have the methods to do that itself.
     
     .. _suddenly need to change the type of the field:
         http://www.javaworld.com/javaworld/jw-09-2003/jw-0905-toolbox.html?page=2
     
-    .. raw:: pdf
+    .. raw: pdf
         
         PageBreak
 
@@ -256,10 +246,6 @@ Chapter 8
     Since both the argument inside the function and the variable outside the
     function point to the same memory location, changes made to one are
     reflected in the other.
-    
-    .. raw:: pdf
-        
-        PageBreak
 
 18. Show the printout of the following code:
     
@@ -308,10 +294,6 @@ Chapter 8
     ::
         
         a[0] = 2 a[1] = 1
-    
-    .. raw:: pdf
-        
-        PageBreak
     
     .. code-block:: java
         
@@ -370,10 +352,6 @@ Chapter 8
         
         t1's i = 2 and j = 1
         t2's i = 2 and j = 1
-    
-    .. raw:: pdf
-        
-        PageBreak
 
 20. What is wrong with the following code?
     
