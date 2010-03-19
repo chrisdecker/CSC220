@@ -10,7 +10,7 @@ Chapter 9
         String s3 = s1 + s2;                 // Correct (concatenation)
         String s3 = s1 - s2;                 // Incorrect (interuptenation?)
         s1 == s2;                            // Correct (but mostly useless)
-        s1 >= s2                             // Correct (but again useless)
+        s1 >= s2;                            // Correct (but again useless)
         s1.compareTo(s2);                    // Correct
         int i = s1.length();                 // Correct
         char c = s1(0);                      // Correct
@@ -92,6 +92,6 @@ Chapter 9
     =========== =====
     intValue    45   
     doubleValue 57.8 
-    line        789  
+    line        "789"  
     =========== =====
 
