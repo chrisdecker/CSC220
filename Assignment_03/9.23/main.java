@@ -40,7 +40,7 @@ class main {
         
         System.out.print("Verify contents: ");
         s.print();
-        System.out.print("\n");
+        System.out.print("\n\n");
         
         System.out.print("MyString1.charAt(int index): ");
         System.out.println(s.charAt(3));
@@ -55,22 +55,54 @@ class main {
         System.out.print("MyString1.toChars(): ");
         System.out.println(s.toChars());
         
+        System.out.print("MyString1.toLowerCase(): ");
+        s.toLowerCase().print();
+        System.out.print("\n");
+        
+        char[] c2 = {'Z','e','t','s','u','b','o'};
+        MyString1 s2 = new MyString1(c2);
+        char[] c3 = {'Z','e','T','s','u'};
+        MyString1 s3 = new MyString1(c3);
+        System.out.println("MyString1.equals(): ");
+        
+        // this is why you use built-ins. When you start re-implementing things,
+        // the normal methods don't work with them. At least they could be made
+        // to work in a duck-typed language...
+        System.out.print("    ");
+        s.print();
+        System.out.print(" == ");
+        s.print();
+        System.out.print(" ? ");
+        System.out.println(s.equals(s));
+        System.out.print("    ");
+        s.print();
+        System.out.print(" == ");
+        s2.print();
+        System.out.print(" ? ");
+        System.out.println(s.equals(s2));
+        System.out.print("    ");
+        s.print();
+        System.out.print(" == ");
+        s3.print();
+        System.out.print(" ? ");
+        System.out.println(s.equals(s3));
+        System.out.print("\n\n");
     }
 }
 
 class MyString1 {
-    char[] data;
+    char[] __data;
     
     public MyString1(char[] chars) {
         // If you don't clone the array, the data will remain available outside
         // the class.
-        this.data = new char[chars.length];
-        System.arraycopy(chars, 0, this.data, 0, chars.length);
+        this.__data = new char[chars.length];
+        System.arraycopy(chars, 0, this.__data, 0, chars.length);
     }
     
     public MyString1 print() {
         for(int i = 0; i < this.length(); i++) {
-            System.out.print(this.data[i]);
+            System.out.print(this.__data[i]);
         }
         
         return this;
@@ -81,11 +113,11 @@ class MyString1 {
         // an out-of-bounds index. I'm not going to subclass Exception, so I'm
         // sticking with the normal ArrayIndexOutOfBoundsException thrown in the
         // same case here.
-        return this.data[index];
+        return this.__data[index];
     }
     
     public int length() {
-        return this.data.length;
+        return this.__data.length;
     }
     
     public MyString1 substring(int begin, int end) {
@@ -100,19 +132,35 @@ class MyString1 {
     
     public char[] toChars() {
         char[] ch = new char[this.length()];
-        System.arraycopy(this.data,0,ch,0, this.length());
+        System.arraycopy(this.__data,0,ch,0, this.length());
         return ch;
     }
     
-    /*
     public MyString1 toLowerCase() {
+        char[] ch = this.toChars();
         
+        for(int i = 0; i < this.length(); i++) {
+            ch[i] = Character.toLowerCase(ch[i]);
+        }
+        
+        return new MyString1(ch);
     }
     
     public boolean equals(MyString1 s) {
+        if(this.length() != s.length()) {
+            return false;
+        }
         
+        for(int i = 0; i < this.length(); i++) {
+            if(this.charAt(i) != s.charAt(i)) {
+                return false;
+            }
+        }
+        
+        return true;
     }
     
+    /*
     public static MyString1 valueOf(int i){
         
     }
