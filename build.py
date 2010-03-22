@@ -29,7 +29,8 @@ for exercise in glob("%s/*" % (source,)):
     
     for code in glob("%s/*" % (exercise,)):
         if "~" not in code and ".java" in code:
-            print "\nCode\n----\n.. code-block:: java\n    "
+            #print "\nCode\n----"
+            print ".. code-block:: java\n    "
             f = open(code)
             for line in f:
                 print "    %s" % (line,),
