@@ -63,18 +63,52 @@ Chapter 9
     new memory address pointing to the new string data. The orginating variable
     is later printed still containing the original string data.
 
-22. How do you check whether a file already exists? How do you delete a file?
-    How do you rename a file/ can you find the file size (the number of bytes)
-    using the `File` class?
+22. How do you check whether a file already exists?
     
+    .. code-block:: java
+        
+        import java.io.File;
+        
+        new File("/etc/hosts.backup").exists();
     
+    How do you delete a file?
+    
+    .. code-block:: java
+        
+        new File("/etc/hosts.backup").delete();
+    
+    How do you rename a file?
+    
+    .. code-block:: java
+        
+        File("/etc/hosts.backup").rename(new File("/etc/hosts"));
+    
+    Can you find the file size (the number of bytes) using the `File` class?
+    
+    .. code-block:: java
+        
+        File("/etc/hosts").length();
 
 26. How do you create a Scanner to read data from a file? What is the reason to
     declare `throws Exception` in the main method in listing (7e 8.7),
     ReadData.java? What would happen if the close method were not invoked in
     Listing (7e 8.7)?
     
+    .. code-block:: java
+        
+        import java.io.File;
+        import java.util.Scanner;
+        
+        File f = new File("/etc/hosts");
+        Scanner s = new Scanner(f);
     
+    Since a File object can be constructed for a file that does not exist
+    (yet.) If such a file were passed to Scanner, then Scanner may throw
+    an I/O Exception.
+    
+    If the close method is not called, the file object would be cleaned up on
+    the next round of garbage collecting, since the variable refering to it
+    is removed when the function goes out of scope.
 
 30. Suppose you enter 45, the ENTER key, 57.8, the ENTER key, 789, the ENTER
     key. Show the contents of the variables after the following code is
