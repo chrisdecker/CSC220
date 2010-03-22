@@ -9,7 +9,8 @@ To solve Programming Exercise 9.23 (7e 8.23)
     Implementing the String class
     -----------------------------
     The String class is provided in the Java library. Provide your own
-    implementation for the following methods (name the new class MyString1)::
+    implementation for the following methods (name the new class
+    MyString1)::
         
         public MyString1(char[] chars);
         public char charAt(int index);
@@ -22,11 +23,11 @@ To solve Programming Exercise 9.23 (7e 8.23)
 
 Document History
 ================
-============= ==================================================================
+============= =========================================================
 Date Modified Reason
-============= ==================================================================
+============= =========================================================
 2010-00-00    Document Created
-============= ==================================================================
+============= =========================================================
 
 */
 
@@ -71,9 +72,10 @@ class main {
         MyString1 s3 = new MyString1(c3);
         System.out.println("MyString1.equals(): ");
         
-        // this is why you use built-ins. When you start re-implementing things,
-        // the normal methods don't work with them. At least they could be made
-        // to work in a duck-typed language...
+        // this is why you use built-ins. When you start
+        // re-implementing things, the normal methods don't work with
+        // them. At least they could be made to work in a duck-typed
+        // language...
         System.out.print("    ");
         s.print();
         System.out.print(" == ");
@@ -112,8 +114,8 @@ class MyString1 {
      * 
      */
     public MyString1(char[] chars) {
-        // If you don't clone the array, the data will remain available outside
-        // the class.
+        // If you don't clone the array, the data will remain available
+        // outside the class.
         this.__data = new char[chars.length];
         System.arraycopy(chars, 0, this.__data, 0, chars.length);
     }
@@ -122,7 +124,8 @@ class MyString1 {
      * Print the MyString1 object.
      * Used for verfication of contents.
      * 
-     * This is a generative function, if for no other reason than I could do it.
+     * This is a generative function, if for no other reason than I
+     * could do it.
      */
     public MyString1 print() {
         for(int i = 0; i < this.length(); i++) {
@@ -135,12 +138,13 @@ class MyString1 {
     /**
      * Provide indexing for the character data inside the object.
      * 
+     * Raises ArrayIndexOutOfBoundsException for out of bounds indices.
      */
     public char charAt(int index) {
-        // String class throws StringIndexOutOfBoundsException in the event of
-        // an out-of-bounds index. I'm not going to subclass Exception, so I'm
-        // sticking with the normal ArrayIndexOutOfBoundsException thrown in the
-        // same case here.
+        // String class throws StringIndexOutOfBoundsException in the
+        // event of an out-of-bounds index. I'm not going to subclass
+        // Exception, so I'm sticking with the normal
+        // ArrayIndexOutOfBoundsException thrown in the same case here.
         return this.__data[index];
     }
     
@@ -176,8 +180,8 @@ class MyString1 {
     /**
      * Convert every alpha character to it's lower case representation.
      * 
-     * This is a generative function, making the changes to the data and then
-     * returning a reference to itself.
+     * This is a generative function, making the changes to the data
+     * and then returning a reference to itself.
      * 
      */
     public MyString1 toLowerCase() {

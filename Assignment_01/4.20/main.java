@@ -8,16 +8,17 @@ Solution to Programming Exercise 4.20:
 
     Printing Prime Numbers Between 2 and 1000.
     
-    Modify Listing 4.14 to print all the prime numbers between 2 and 1000,
-    inclusively. Display eight prime numbers per line.
+    Modify Listing 4.14 to print all the prime numbers between 2 and
+    1000, inclusively. Display eight prime numbers per line.
 
-Oh, oops. "Modify Listing 4.14." Ah well. I already wrote the thing to sieve
-the primes instead of brute force them, so I'll just stick with this. :P
+Oh, oops. "Modify Listing 4.14." Ah well. I already wrote the thing to
+sieve the primes instead of brute force them, so I'll just stick with
+this. :P
 
-Ah, by the way, the loop testing for primes in 4.14 goes from 2 to half the
-number. It should go from 2 to the square root of the number. Doing this saves
-some 21096 iterations over the course of searching primes less than or equal
-to 1000:
+Ah, by the way, the loop testing for primes in 4.14 goes from 2 to half
+the number. It should go from 2 to the square root of the number. Doing
+this saves some 21096 iterations over the course of searching primes
+less than or equal to 1000:
 
 .. code-block:: python
     
@@ -28,13 +29,13 @@ to 1000:
 
 Document History
 ================
-============= ==================================================================
+============= =========================================================
 Date Modified Reason
-============= ==================================================================
+============= =========================================================
 2010-03-02    Document Created
 2010-03-04    Prime sieve completed.
 2010-03-04    Printing completed.
-============= ==================================================================
+============= =========================================================
 */
 
 /**
@@ -73,13 +74,13 @@ class main {
 class Prime {
     
     /**
-     * Generate a list of primes up to the provided limit via the Sieve of
-     * Eratosthenes.
+     * Generate a list of primes up to the provided limit via the
+     * Sieve of Eratosthenes.
      * 
      * http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
      * 
-     * There are some optimizations that could be made to the sieve, but I'm
-     * not going to waste effort on it here.
+     * There are some optimizations that could be made to the sieve,
+     * but I'm not going to waste effort on it here.
      * 
      * @param int limit
      * 
@@ -88,7 +89,8 @@ class Prime {
      */
     public static boolean[] sieve (int limit) {
         
-        limit = limit + 1; // offset limit to correct for 0-indexed array
+        limit = limit + 1; // offset limit to correct for 0-indexed
+                           // array
         
         boolean[] primes = new boolean[limit];
         
@@ -97,15 +99,17 @@ class Prime {
             primes[i] = i > 1;
         }
         
-        // This is the loop that run through the list and determines which are
-        // prime. It stops when the square of the current prime exceeds the
-        // limit.
+        // This is the loop that run through the list and determines
+        // which are prime. It stops when the square of the current
+        // prime exceeds the limit.
         for(int p=2; Math.pow(p, 2) < limit; p++) {
             //System.out.printf("Checking %d... ", p);
             
-            // If p is composite, who don't need to strike it's multiples.
+            // If p is composite, who don't need to strike it's
+            // multiples.
             if (primes[p]) {
-                //System.out.printf("%d is prime. Strike multiples:\n", p);
+                //System.out.printf("%d is prime. Strike multiples:\n",
+                //    p);
                 
                 // Strike all multiples of p
                 for (int q = 2; q < limit; q++) {
@@ -118,15 +122,14 @@ class Prime {
                     }
                 }
             } else {
-                //System.out.printf("%d is not prime. Continuing.\n", p);
+                //System.out.printf("%d is not prime. Continuing.\n",
+                //    p);
             }
         }
         
-        // Complete. The array holds true for all prime indexes and false for
-        // all composite indexes.
+        // Complete. The array holds true for all prime indexes and
+        // false for all composite indexes.
         
         return primes;
     }
-    
-    
 }

@@ -8,29 +8,31 @@ Solution to Programming Exercise 6.24:
 
     Adding two Matrices
     
-    Write a method to add two matrices. The header of the method is as follows:
+    Write a method to add two matrices. The header of the method is as
+    follows:
     
     .. code-block:: java
         
         public static in[][] addMatrix(int[][] a, int[][] b)
     
-    In order to be added, the two matrices must have the same dimensions and the
-    same or compatible types of elements. As shown below, two matrices are added
-    by adding the two elements in each matrix with the same index.
+    In order to be added, the two matrices must have the same
+    dimensions and the same or compatible types of elements. As shown
+    below, two matrices are added by adding the two elements in each
+    matrix with the same index.
 
-Oh, by the way, the previous class had us do 6.25 (matrix multiplication,) so
-I'm building off of previous effort here. I was intending on making a Matrix
-object at some point for that assignment but never got around to it. Don't
-expect me to whip up custom objects or types for future assignments unless they
-are explicitly called for.
+Oh, by the way, the previous class had us do 6.25 (matrix
+multiplication,) so I'm building off of previous effort here. I was
+intending on making a Matrix object at some point for that assignment
+but never got around to it. Don't expect me to whip up custom objects
+or types for future assignments unless they are explicitly called for.
 
 Document History
 ================
-============= ==================================================================
+============= =========================================================
 Date Modified Reason
-============= ==================================================================
+============= =========================================================
 2010-03-02    Document Created
-============= ==================================================================
+============= =========================================================
 
 */
 
@@ -88,10 +90,10 @@ class Matrix {
     /**
      * Returns the height of the matrix
      * 
-     * This is run on construction and the result stored in Matrix.height, so
-     * use this function only if a recalculation is necessary. For example, if
-     * you replaced the contents of the matrix instead of making a new one
-     * (don't do that.)
+     * This is run on construction and the result stored in
+     * Matrix.height, so use this function only if a recalculation is
+     * necessary. For example, if you replaced the contents of the
+     * matrix instead of making a new one (don't do that.)
      * 
      * @param int[][] matrix
      * 
@@ -104,14 +106,14 @@ class Matrix {
     /**
      * Returns the width of the matrix.
      *
-     * Counts length of each row-array in the matrix. If the matrix is ragged,
-     * returns -1. If the matrix is rectangular returns the number of
-     * elements in each row-array.
+     * Counts length of each row-array in the matrix. If the matrix is
+     * ragged, returns -1. If the matrix is rectangular returns the
+     * number of elements in each row-array.
      * 
-     * This is run on construction and the result stored in Matrix.width, so use
-     * this function only if a recalculation is necessary. For example, if you
-     * replaced the contents of the matrix instead of making a new one (don't
-     * do that.)
+     * This is run on construction and the result stored in
+     * Matrix.width, so use this function only if a recalculation is
+     * necessary. For example, if you replaced the contents of the
+     * matrix instead of making a new one (don't do that.)
      * 
      * @param int[][] matrix
      * 
@@ -132,8 +134,8 @@ class Matrix {
     }
     
     /**
-     * Performs a simple check of the validity of the matrix (height and width
-     * greater than one,) and returns the result.
+     * Performs a simple check of the validity of the matrix (height
+     * and width greater than one,) and returns the result.
      * 
      * @return boolean valid
      *  
@@ -156,20 +158,22 @@ class Matrix {
      */
     public Matrix add(Matrix other) {
         if (!(this.is_valid() && other.is_valid())) {
-            throw new IllegalArgumentException("One or both matrices are " +
-                "invalid. Usually this is due to the matrix being ragged.");
+            throw new IllegalArgumentException(
+                "One or both matrices are invalid. Usually this is " +
+                "due to the matrix being ragged.");
         }
         
         if(!(this.height == other.height && this.width == other.width)) {
-            throw new IllegalArgumentException("Matrix addition requires two "+
-                "matrixes of identical dimensions.");
-            // actually, that isn't true. There is another type of matrix
-            // addition that makes a matrix with a width of the sum of the
-            // widths and height of the sum of the heights of the source
-            // matrices.
-            // In that form, the first source matrix is in the upper left corner
-            // of the resulting matrix, while the second source matrix is in the
-            // lower right corner.
+            throw new IllegalArgumentException(
+                "Matrix addition requires two matrixes of identical " +
+                "dimensions.");
+            // actually, that isn't true. There is another type of
+            // matrix addition that makes a matrix with a width of the
+            // sum of the widths and height of the sum of the heights
+            // of the source matrices.
+            // In that form, the first source matrix is in the upper
+            // left corner of the resulting matrix, while the second
+            // source matrix is in the lower right corner.
         }
         
         int height = this.height;
@@ -181,7 +185,8 @@ class Matrix {
         // together to get the result element.
         for(int i = 0; i < height; i++) {
             for(int j = 0; j < width; j++) {
-                result_src[i][j] = this.elements[i][j] + other.elements[i][j];
+                result_src[i][j] =
+                    this.elements[i][j] + other.elements[i][j];
             }
         }
         
