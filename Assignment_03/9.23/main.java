@@ -100,9 +100,17 @@ class main {
     }
 }
 
+/**
+ * A partial re-implementation of the java String class
+ * 
+ */
 class MyString1 {
     char[] __data;
     
+    /**
+     * Create a new MyString1 object from a character array.
+     * 
+     */
     public MyString1(char[] chars) {
         // If you don't clone the array, the data will remain available outside
         // the class.
@@ -110,6 +118,12 @@ class MyString1 {
         System.arraycopy(chars, 0, this.__data, 0, chars.length);
     }
     
+    /**
+     * Print the MyString1 object.
+     * Used for verfication of contents.
+     * 
+     * This is a generative function, if for no other reason than I could do it.
+     */
     public MyString1 print() {
         for(int i = 0; i < this.length(); i++) {
             System.out.print(this.__data[i]);
@@ -118,6 +132,10 @@ class MyString1 {
         return this;
     }
     
+    /**
+     * Provide indexing for the character data inside the object.
+     * 
+     */
     public char charAt(int index) {
         // String class throws StringIndexOutOfBoundsException in the event of
         // an out-of-bounds index. I'm not going to subclass Exception, so I'm
@@ -126,6 +144,10 @@ class MyString1 {
         return this.__data[index];
     }
     
+    /**
+     * Return the length of the string.
+     * 
+     */
     public int length() {
         return this.__data.length;
     }
@@ -139,23 +161,37 @@ class MyString1 {
         
         return new MyString1(substring);
     }
-    
+    /**
+     * Convert the object to a character array.
+     * 
+     * Well, more "return a copy of the internal data," but oh well.
+     * 
+     */
     public char[] toChars() {
         char[] ch = new char[this.length()];
         System.arraycopy(this.__data,0,ch,0, this.length());
         return ch;
     }
     
+    /**
+     * Convert every alpha character to it's lower case representation.
+     * 
+     * This is a generative function, making the changes to the data and then
+     * returning a reference to itself.
+     * 
+     */
     public MyString1 toLowerCase() {
-        char[] ch = this.toChars();
-        
         for(int i = 0; i < this.length(); i++) {
-            ch[i] = Character.toLowerCase(ch[i]);
+            this.__data[i] = Character.toLowerCase(this.__data[i]);
         }
         
-        return new MyString1(ch);
+        return this;
     }
     
+    /**
+     * Compares this instance with another.
+     * 
+     */
     public boolean equals(MyString1 s) {
         if(this.length() != s.length()) {
             return false;
@@ -170,7 +206,10 @@ class MyString1 {
         return true;
     }
     
-    
+    /**
+     * Convert an integer to a MyString1 object.
+     * 
+     */
     public static MyString1 valueOf(int i){
         return new MyString1(Integer.toString(i).toCharArray());
     }
