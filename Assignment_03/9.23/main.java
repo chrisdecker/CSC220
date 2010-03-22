@@ -42,23 +42,29 @@ class main {
         s.print();
         System.out.print("\n\n");
         
+        // indexing
         System.out.print("MyString1.charAt(int index): ");
         System.out.println(s.charAt(3));
         
+        // string length
         System.out.print("MyString1.length(): ");
         System.out.println(s.length());
         
+        // substring
         System.out.print("MyString1.substring(int begin, int end): ");
         s.substring(2,5).print();
         System.out.print("\n");
         
+        // to character array
         System.out.print("MyString1.toChars(): ");
         System.out.println(s.toChars());
         
+        // to lower case
         System.out.print("MyString1.toLowerCase(): ");
         s.toLowerCase().print();
         System.out.print("\n");
         
+        // equals
         char[] c2 = {'Z','e','t','s','u','b','o'};
         MyString1 s2 = new MyString1(c2);
         char[] c3 = {'Z','e','T','s','u'};
@@ -85,8 +91,12 @@ class main {
         System.out.print(" == ");
         s3.print();
         System.out.print(" ? ");
-        System.out.println(s.equals(s3));
-        System.out.print("\n\n");
+        System.out.print(s.equals(s3));
+        System.out.print("\n");
+        
+        // convert Integer to MyString1
+        MyString1.valueOf(34).print();
+        System.out.print("\n");
     }
 }
 
@@ -160,9 +170,9 @@ class MyString1 {
         return true;
     }
     
-    /*
+    
     public static MyString1 valueOf(int i){
-        
+        return new MyString1(Integer.toString(i).toCharArray());
     }
-    */
+    
 }
