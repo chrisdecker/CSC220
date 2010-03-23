@@ -69,25 +69,29 @@ Chapter 9
         
         import java.io.File;
         
-        new File("/etc/hosts.backup").exists();
+        File hosts_backup = new File("/etc/hosts.backup")
+        
+        hosts_backup.exists();
     
     How do you delete a file?
     
     .. code-block:: java
         
-        new File("/etc/hosts.backup").delete();
+        hosts_backup.delete();
     
     How do you rename a file?
     
     .. code-block:: java
         
-        File("/etc/hosts.backup").rename(new File("/etc/hosts"));
+        File hosts = new File("/etc/hosts");
+        
+        hosts_backup.rename(hosts);
     
     Can you find the file size (the number of bytes) using the `File` class?
     
     .. code-block:: java
         
-        File("/etc/hosts").length();
+        hosts.length();
 
 26. How do you create a Scanner to read data from a file? What is the reason to
     declare `throws Exception` in the main method in listing (7e 8.7),
