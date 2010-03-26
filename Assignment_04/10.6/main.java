@@ -26,21 +26,41 @@ To solve the Programming Exercise 10.9 (7e 9.9)
 class main {
     public static void main (String[] args) {
         Course course = new Course("MECHA101 - Giant Robots");
+        // Well, that was boring.
         
+        // Lets kick it up a notch.
         course.addStudent("Yoko Ritona")
               .addStudent("Simon")
               .addStudent("Kamina")
-              .addStudent("Leeron")
-              .addStudent("Kittan")
+              .addStudent("Leeron Ritona")
+              .addStudent("Kittan Bachika")
               .addStudent("Nia Teppelin")
-              .addStudent("Gimmy")
-              .addStudent("Darry");
+              .addStudent("Gimmy Adai")
+              .addStudent("Darry Adai")
+              .addStudent("Balinbow Bakusa")
+              .addStudent("Jorgun Bakusa")
+              .addStudent("Rossiu Adai")
+              .addStudent("Boota")
+              .addStudent("Dayakka Ritona")
+              .addStudent("Kiyoh Bachika")
+              .addStudent("Kiyal Bachika")
+              .addStudent("Kinon Bachika")
+              .addStudent("Zorthy Kanai")
+              .addStudent("Iraak Coega")
+              .addStudent("Kidd Coega")
+              .addStudent("Makken")
+              .addStudent("Attenborough Cortitch")
+              .addStudent("Tetsukan Ritona")
+              .addStudent("Gabal Docker")
+              .addStudent("Leite Jokin")
+              .addStudent("Makken");
+        // BAM
         
         for(int i = 0; i < course.enrolled; i++) {
             System.out.printf("course.students[%d] = %s\n", i, course.students[i]);
         }
         
-        System.out.println(course.findStudent("Viral"));
+        System.out.println(course.findStudent(args[0]));
     }
 }
 
@@ -71,31 +91,48 @@ class Course {
         return this;
     }
     
-    public void dropStudent(String student) {
+    public Course dropStudent(String student) {
         
     }
     
     public int findStudent(String student) {
+        // bootstrap the binary search with some initial data.
         int min = 0;
-        int max = enrolled - 1;
+        int max = enrolled;
+        
+        // start at the middle and make the initial comparison. We can
+        // skip the loop if we are lucky.
         int index = enrolled / 2;
         int found = student.compareTo(this.students[index]);
         
-        //System.out.printf("%s == [%d] %s ? %d\n", student, index, this.students[index], found);
-        
         while (found != 0) {
-            System.out.printf("Range: %d, %d\n", min, max);
+            
+            System.out.printf("Range: %d, %d; Next: %d\n",
+                min, max, (min+max)/2);
+            //System.out.printf("Checking: %d\n", index);
             
             if(found < 0) {
                 max = index;
-                System.out.printf("higher: %d\n", max);
+                //System.out.printf("lower: %d\n", max);
             } else {
                 min = index;
-                System.out.printf("lower: %d\n", min);
+                //System.out.printf("higher: %d\n", min);
             }
             
-            index = (min + max) / 2;
+            // A simple less than check won't work. We also need to
+            // check that there is another element to compare between
+            // min and max.
+            // 
+            // Both checks can be combined.
+            // If min is already larger or suffifiently less than, one
+            // more won't change that. But if it's just one less, then
+            // the addition pushes it over the less than and fails.
+            if(!((min+1) < max)) {
+                return -1;
+            }
             
+            // next element and comparison.
+            index = (min + max) / 2;
             found = student.compareTo(this.students[index]);
         }
         
