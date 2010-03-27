@@ -52,15 +52,20 @@ class main {
               .addStudent("Attenborough Cortitch")
               .addStudent("Tetsukan Ritona")
               .addStudent("Gabal Docker")
-              .addStudent("Leite Jokin")
-              .addStudent("Makken");
+              .addStudent("Leite Jokin");
         // BAM
         
-        for(int i = 0; i < course.enrolled; i++) {
-            System.out.printf("course.students[%d] = %s\n", i, course.students[i]);
-        }
+        System.out.println(course.findStudent("Kamina"));
         
-        System.out.println(course.findStudent(args[0]));
+        
+        //course.dropStudent("Kamina");
+        
+        //for(int i = 0; i < course.enrolled; i++) {
+        //    System.out.printf("course.students[%d] = %s\n", i, course.students[i]);
+        //}
+        
+        System.out.println(course);
+        
     }
 }
 
@@ -68,6 +73,7 @@ class Course {
     private String courseName;
     String[] students = new String[100];
     int enrolled;
+    boolean sorted;
     
     public Course(String courseName) {
         this.courseName = courseName;
@@ -85,18 +91,51 @@ class Course {
         
         this.students[enrolled] = student;
         this.enrolled = this.enrolled + 1;
-        
-        QuickSort.Quicksort(this.students, 0, enrolled-1);
+        this.sorted = false;
         
         return this;
     }
     
     public Course dropStudent(String student) {
+        int index = this.findStudent(student);
         
+        if(index >= 0) {
+            String[] newData = new String[this.students.length];
+            
+            // By using a while loop, we have the opportunity to NOT
+            // increment the counter. This added to adjusting the limit
+            // when we see the student who recently had a bridge
+            // dropped on him means that we neatly leave the poor soul
+            // out of the new array while simultaneously correcting the
+            // student count.
+            int i = 0;
+            while(i < this.enrolled) {
+                
+                if(i != index) {
+                    newData[i] = this.students[i];
+                    i = i + 1;
+                } else {
+                    this.enrolled = this.enrolled - 1;
+                }
+            }
+        }
+        
+        return this;
     }
     
     public int findStudent(String student) {
-        // bootstrap the binary search with some initial data.
+        // List of one is default sorted and list of zero has no
+        // results. Short-circuit the entire function for special cases.
+        if(this.enrolled < 1) {
+            return -1;
+        } else if(this.enrolled == 1) {
+            return 0;
+        }
+        
+        // Ensure a sorted listing of students for binary search.
+        this.sort();
+        
+        // bootstrap the search with some initial data.
         int min = 0;
         int max = enrolled;
         
@@ -139,8 +178,28 @@ class Course {
         return index;
     }
     
-    public String toString() {
+    public Course sort() {
+        if(!this.sorted) {
+            QuickSort.Quicksort(this.students, 0, enrolled-1);
+            this.sorted = true;
+        }
         
-        return this.courseName;
+        return this;
+    }
+    
+    public String toString() {
+        if(this.enrolled > 0) {
+            StringBuilder output = new StringBuilder();
+            
+            output.append(this.students[0]);
+            for(int i = 1; i < this.enrolled; i++) {
+                output.append("\n");
+                output.append(this.students[i]);
+            }
+            
+            return output.toString();
+        }
+        
+        return "";
     }
 }
