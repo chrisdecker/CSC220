@@ -20,6 +20,8 @@ To solve the Programming Exercise 10.9 (7e 9.9)
 
 */
 
+import java.util.Arrays;
+
 /**
  * Driver class
  */
@@ -55,15 +57,19 @@ class main {
               .addStudent("Leite Jokin");
         // BAM
         
-        System.out.println(course.findStudent("Kamina"));
+        System.out.println("Initial Roster");
+        System.out.println(course);
         
+        course.dropStudent("Kamina")
+              .dropStudent("Makken")
+              .dropStudent("Zorthy Kanai")
+              .dropStudent("Balinbow Bakusa")
+              .dropStudent("Jorgun Bakusa")
+              .dropStudent("Iraak Coega")
+              .dropStudent("Kidd Coega")
+              .dropStudent("Kittan Bachika");
         
-        //course.dropStudent("Kamina");
-        
-        //for(int i = 0; i < course.enrolled; i++) {
-        //    System.out.printf("course.students[%d] = %s\n", i, course.students[i]);
-        //}
-        
+        System.out.println("\nAfterwards...");
         System.out.println(course);
         
     }
@@ -86,6 +92,9 @@ class Course {
             //String[] newArray = new String[(int)(this.enrolled * 1.5)];
             //System.arraycopy(this.students, 0, newArray, 0);
             //this.students = newArray;
+            
+            //Array.copyOf(this.students
+            
             return this;
         }
         
@@ -105,77 +114,27 @@ class Course {
             // By using a while loop, we have the opportunity to NOT
             // increment the counter. This added to adjusting the limit
             // when we see the student who recently had a bridge
-            // dropped on him means that we neatly leave the poor soul
-            // out of the new array while simultaneously correcting the
-            // student count.
+            // dropped on him means that we neatly leave the remains
+            // to be taken out by the garbage collector.
             int i = 0;
             while(i < this.enrolled) {
-                
                 if(i != index) {
                     newData[i] = this.students[i];
                     i = i + 1;
                 } else {
                     this.enrolled = this.enrolled - 1;
+                    index = - 1;
                 }
             }
+            
+            this.students = newData;
         }
         
         return this;
     }
     
     public int findStudent(String student) {
-        // List of one is default sorted and list of zero has no
-        // results. Short-circuit the entire function for special cases.
-        if(this.enrolled < 1) {
-            return -1;
-        } else if(this.enrolled == 1) {
-            return 0;
-        }
-        
-        // Ensure a sorted listing of students for binary search.
-        this.sort();
-        
-        // bootstrap the search with some initial data.
-        int min = 0;
-        int max = enrolled;
-        
-        // start at the middle and make the initial comparison. We can
-        // skip the loop if we are lucky.
-        int index = enrolled / 2;
-        int found = student.compareTo(this.students[index]);
-        
-        while (found != 0) {
-            
-            System.out.printf("Range: %d, %d; Next: %d\n",
-                min, max, (min+max)/2);
-            //System.out.printf("Checking: %d\n", index);
-            
-            if(found < 0) {
-                max = index;
-                //System.out.printf("lower: %d\n", max);
-            } else {
-                min = index;
-                //System.out.printf("higher: %d\n", min);
-            }
-            
-            // A simple less than check won't work. We also need to
-            // check that there is another element to compare between
-            // min and max.
-            // 
-            // Both checks can be combined.
-            // If min is already larger or suffifiently less than, one
-            // more won't change that. But if it's just one less, then
-            // the addition pushes it over the less than and fails.
-            if(!((min+1) < max)) {
-                return -1;
-            }
-            
-            // next element and comparison.
-            index = (min + max) / 2;
-            found = student.compareTo(this.students[index]);
-        }
-        
-        return index;
+        return Arrays.binarySearch(this.students, 0, this.enrolled, student);
     }
     
     public Course sort() {
@@ -190,19 +149,23 @@ class Course {
     public String toString() {
         this.sort();
         
-        if(this.enrolled > 0) {
-            StringBuilder output = new StringBuilder();
-            
-            output.append(this.courseName);
-            
-            for(int i = 0; i < this.enrolled; i++) {
-                output.append("\n");
-                output.append(this.students[i]);
-            }
-            
-            return output.toString();
-        }
+        StringBuilder output = new StringBuilder();
+        output.append(String.format(
+            "========================================\n" +
+            "%s\n" +
+            "----------------------------------------\n" +
+            "%22d students enrolled\n" +
+            "========================================",
+            this.courseName, this.enrolled));
         
-        return "";
+        if(this.enrolled > 0) {
+            for(int i = 0; i < this.enrolled; i++) {
+                output.append(String.format("\n%s", this.students[i]));
+            }
+        } else {
+            output.append(String.format("\n%s", "emtpy"));
+        }
+        output.append("\n========================================");
+        return output.toString();
     }
 }
