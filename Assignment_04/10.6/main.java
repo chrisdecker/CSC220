@@ -188,11 +188,14 @@ class Course {
     }
     
     public String toString() {
+        this.sort();
+        
         if(this.enrolled > 0) {
             StringBuilder output = new StringBuilder();
             
-            output.append(this.students[0]);
-            for(int i = 1; i < this.enrolled; i++) {
+            output.append(this.courseName);
+            
+            for(int i = 0; i < this.enrolled; i++) {
                 output.append("\n");
                 output.append(this.students[i]);
             }
