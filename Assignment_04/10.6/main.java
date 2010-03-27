@@ -27,34 +27,35 @@ import java.util.Arrays;
  */
 class main {
     public static void main (String[] args) {
-        Course course = new Course("MECHA101 - Giant Robots");
-        // Well, that was boring.
+        Course course = new Course("MECHA 101 - Giant Robots");
         
-        // Lets kick it up a notch.
-        course.addStudent("Yoko Ritona")
-              .addStudent("Simon")
+        course.addStudent("Simon")
               .addStudent("Kamina")
+              .addStudent("Yoko Ritona");
+        
+        // Well, that was boring.
+        // Lets kick it up a notch.
+        course.addStudent("Boota")
               .addStudent("Leeron Ritona")
               .addStudent("Kittan Bachika")
-              .addStudent("Nia Teppelin")
-              .addStudent("Gimmy Adai")
-              .addStudent("Darry Adai")
-              .addStudent("Balinbow Bakusa")
-              .addStudent("Jorgun Bakusa")
-              .addStudent("Rossiu Adai")
-              .addStudent("Boota")
-              .addStudent("Dayakka Ritona")
               .addStudent("Kiyoh Bachika")
               .addStudent("Kiyal Bachika")
               .addStudent("Kinon Bachika")
+              .addStudent("Gimmy Adai")
+              .addStudent("Darry Adai")
+              .addStudent("Rossiu Adai")
+              .addStudent("Dayakka Ritona")
+              .addStudent("Tetsukan Ritona")
+              .addStudent("Gabal Docker")
+              .addStudent("Leite Jokin")
               .addStudent("Zorthy Kanai")
               .addStudent("Iraak Coega")
               .addStudent("Kidd Coega")
               .addStudent("Makken")
+              .addStudent("Balinbow Bakusa")
+              .addStudent("Jorgun Bakusa")
               .addStudent("Attenborough Cortitch")
-              .addStudent("Tetsukan Ritona")
-              .addStudent("Gabal Docker")
-              .addStudent("Leite Jokin");
+              .addStudent("Nia Teppelin");
         // BAM
         
         System.out.println("Initial Roster");
@@ -66,21 +67,25 @@ class main {
         
         course.dropStudent("Makken")
               .dropStudent("Zorthy Kanai")
-              .dropStudent("Balinbow Bakusa")
-              .dropStudent("Jorgun Bakusa")
               .dropStudent("Iraak Coega")
               .dropStudent("Kidd Coega")
-              .dropStudent("Kittan Bachika");
+              .dropStudent("Balinbow Bakusa")
+              .dropStudent("Jorgun Bakusa")
+              .dropStudent("Kittan Bachika")
+              .dropStudent("Nia Teppelin");
         
         System.out.println("\nAfterwards...");
         System.out.println(course);
         
+        course.clear();
+        System.out.println("\nFin.");
+        System.out.println(course);
     }
 }
 
 class Course {
     private String courseName;
-    String[] students = new String[100];
+    String[] students = new String[2];
     int enrolled;
     boolean sorted;
     
@@ -92,13 +97,18 @@ class Course {
         // check that there is space in the array.
         if(this.enrolled >= this.students.length) {
             // make a larger array if there isn't.
-            //String[] newArray = new String[(int)(this.enrolled * 1.5)];
-            //System.arraycopy(this.students, 0, newArray, 0);
-            //this.students = newArray;
+            //System.out.printf("Expand array from %d to %d\n",
+            //    this.students.length, (int)(this.students.length * 1.5));
             
-            Array.copyOf(this.students
+            String[] newArray = new String[(int)(this.enrolled * 1.5)];
             
-            return this;
+            for(int i = 0; i < this.enrolled; i++) {
+                //System.out.println("    "+this.students[i]);
+                
+                newArray[i] = this.students[i];
+            }
+            
+            this.students = newArray;
         }
         
         this.students[enrolled] = student;
@@ -142,26 +152,41 @@ class Course {
         return this;
     }
     
+    public Course clear() {
+        String[] newData = new String[2];
+        
+        this.students = newData;
+        this.enrolled = 0;
+        this.sorted = false;
+        
+        return this;
+    }
+    
     public String toString() {
         this.sort();
         
         StringBuilder output = new StringBuilder();
         output.append(String.format(
-            "========================================\n" +
-            "%s\n" +
-            "----------------------------------------\n" +
-            "%22d students enrolled\n" +
-            "========================================",
-            this.courseName, this.enrolled));
+            "==== ===============================" +
+            "====================================\n" +
+            "%-36s %35s\n" +
+            "------------------------------------" +
+            "------------------------------------\n" + 
+            "Seat Student Name\n" +
+            "==== ===============================" +
+            "====================================",
+            this.courseName, String.format("Seats %s / %s",
+            this.enrolled, this.students.length)));
         
         if(this.enrolled > 0) {
             for(int i = 0; i < this.enrolled; i++) {
-                output.append(String.format("\n%4d %s", i, this.students[i]));
+                output.append(String.format("\n%04d %s", i, this.students[i]));
             }
         } else {
-            output.append(String.format("\n%20s", "emtpy"));
+            output.append(String.format("\n%10s", "emtpy"));
         }
-        output.append("\n========================================");
+        output.append("\n==== ===============================" +
+                        "====================================");
         return output.toString();
     }
 }
