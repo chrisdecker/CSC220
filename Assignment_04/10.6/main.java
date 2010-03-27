@@ -138,10 +138,7 @@ class Course {
     }
     
     public Course sort() {
-        if(!this.sorted) {
-            QuickSort.Quicksort(this.students, 0, enrolled-1);
-            this.sorted = true;
-        }
+        Arrays.sort(this.students, 0, this.enrolled, null);
         
         return this;
     }
