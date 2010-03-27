@@ -60,8 +60,11 @@ class main {
         System.out.println("Initial Roster");
         System.out.println(course);
         
-        course.dropStudent("Kamina")
-              .dropStudent("Makken")
+        course.dropStudent("Kamina");
+        
+        course.dropStudent("Kiyoh Bachika").addStudent("Kiyoh Ritona");
+        
+        course.dropStudent("Makken")
               .dropStudent("Zorthy Kanai")
               .dropStudent("Balinbow Bakusa")
               .dropStudent("Jorgun Bakusa")
@@ -111,22 +114,15 @@ class Course {
         if(index >= 0) {
             String[] newData = new String[this.students.length];
             
-            // By using a while loop, we have the opportunity to NOT
-            // increment the counter. This added to adjusting the limit
-            // when we see the student who recently had a bridge
-            // dropped on him means that we neatly leave the remains
-            // to be taken out by the garbage collector.
-            int i = 0;
-            while(i < this.enrolled) {
+            int j = 0;
+            for(int i = 0; i < this.enrolled; i++) {
                 if(i != index) {
-                    newData[i] = this.students[i];
-                    i = i + 1;
+                    newData[i-j] = this.students[i];
                 } else {
-                    this.enrolled = this.enrolled - 1;
-                    index = - 1;
+                    j = 1;
                 }
             }
-            
+            this.enrolled = this.enrolled - 1;
             this.students = newData;
         }
         
@@ -134,6 +130,7 @@ class Course {
     }
     
     public int findStudent(String student) {
+        this.sort();
         return Arrays.binarySearch(this.students, 0, this.enrolled, student);
     }
     
@@ -159,10 +156,10 @@ class Course {
         
         if(this.enrolled > 0) {
             for(int i = 0; i < this.enrolled; i++) {
-                output.append(String.format("\n%s", this.students[i]));
+                output.append(String.format("\n%4d %s", i, this.students[i]));
             }
         } else {
-            output.append(String.format("\n%s", "emtpy"));
+            output.append(String.format("\n%20s", "emtpy"));
         }
         output.append("\n========================================");
         return output.toString();
