@@ -93,7 +93,7 @@ class Course {
             //System.arraycopy(this.students, 0, newArray, 0);
             //this.students = newArray;
             
-            //Array.copyOf(this.students
+            Array.copyOf(this.students
             
             return this;
         }
@@ -138,7 +138,9 @@ class Course {
     }
     
     public Course sort() {
-        Arrays.sort(this.students, 0, this.enrolled, null);
+        if(!this.sorted) {
+            Arrays.sort(this.students, 0, this.enrolled, null);
+        }
         
         return this;
     }
