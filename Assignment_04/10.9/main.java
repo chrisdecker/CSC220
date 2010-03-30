@@ -12,8 +12,8 @@ To solve the Programming Exercise 10.9 (7e 9.9)
       automatically increase the array size by creating a new larger
       array and copying the contents of the current array to it.
     * Implement the `dropStudent` method.
-    * Add a new method named `clear()` that removes all student from the
-      course.
+    * Add a new method named `clear()` that removes all student from
+      the course.
     
     Write a test program that creates a course, add three students,
     removes one, annd displays the students in the course.
@@ -63,7 +63,8 @@ class main {
         
         course.dropStudent("Kamina");
         
-        course.dropStudent("Kiyoh Bachika").addStudent("Kiyoh Ritona");
+        course.dropStudent("Kiyoh Bachika")
+              .addStudent("Kiyoh Ritona");
         
         course.dropStudent("Makken")
               .dropStudent("Zorthy Kanai")
@@ -187,7 +188,8 @@ class Course {
      */
     public int findStudent(String student) {
         this.sort();
-        return Arrays.binarySearch(this.students, 0, this.enrolled, student);
+        return Arrays.binarySearch(this.students, 0,
+                                   this.enrolled, student);
     }
     
     /**
@@ -204,6 +206,17 @@ class Course {
         }
         
         return this;
+    }
+    
+    /**
+     * Returns the number of slots left before the list array must be
+     * increased.
+     * 
+     * @return int
+     * 
+     */
+    public int openSeats() {
+        return this.students.length - this.enrolled;
     }
     
     /**
@@ -255,7 +268,8 @@ class Course {
         
         if(this.enrolled > 0) {
             for(int i = 0; i < this.enrolled; i++) {
-                output.append(String.format("\n%04d %s", i, this.students[i]));
+                output.append(String.format(
+                    "\n%04d %s", i, this.students[i]));
             }
         } else {
             output.append(String.format("\n%10s", "emtpy"));
