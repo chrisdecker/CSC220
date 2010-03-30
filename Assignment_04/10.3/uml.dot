@@ -6,9 +6,8 @@ digraph "UML - MyPoint" {
 -y:double\l |\
 <methods>\
 MyPoint(x=0:double, y=0:double)\l\
-+distance()\l\
 +distance(other:MyPoint)\l\
-+distance(x:double, y:double)\l\
++distance(x=0:double, y=0:double)\l\
 +getX():double\l\
 \+getY():double\l}"]
 }
