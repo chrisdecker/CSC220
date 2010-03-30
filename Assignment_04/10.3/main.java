@@ -40,9 +40,14 @@ public class main {
     }
 }
 
+/**
+ * A basic representation of a point on a 2-dimensional Cartesian
+ * plane.
+ * 
+ */
 class MyPoint {
-    double __x;
-    double __y;
+    private double __x;
+    private double __y;
     
     public MyPoint() {
         this(0, 0);
@@ -71,7 +76,7 @@ class MyPoint {
      * 
      * Calls the other MyPoint instance's distance(double, double)
      * method with the calling instance's coordinates. 
-     * I.E: `p1.distance(p2)` * is equivalent to
+     * I.E: `p1.distance(p2)` is equivalent to
      * `p2.distance(p1.__x, p1.__y)`.
      * 
      */
