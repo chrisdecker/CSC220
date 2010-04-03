@@ -5,7 +5,12 @@ Chapter 12
     `java.awt.Button`, and Swing components, such as
     `javax.swing.JButton`.
     
+    Swing is a new GUI library developed to replace AWT, which suffered
+    several drawbacks in bugs, resource consumption, and platform
+    dependency.
     
+    Rather than map components to those used by the platform, Swing
+    draws the components directly.
 
 4.  Determine whether the following statements are true or false:
     * You can add a button to a frame.
@@ -14,14 +19,22 @@ Chapter 12
     * You can add any number of components to a panel or frame.
     * You can derive a class from a `JButton`, `JPanel`, or `JFrame`.
     
+    True.
     
+    False.
+    
+    True.
+    
+    True.
+    
+    True.
 
 6.  Which of the following statements have syntax errors?
     
     .. code-block:: java
         
         Component c1 = new Component();
-        JComponent c2 = new JComponent();
+        JComponent c2 = new JComponent(); // Incorrect. JComponent is abstract.
         Component c3 = new JButton();
         JComponent c4 = new JButton();
         Container c5 = new JButton();
