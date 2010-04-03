@@ -9,7 +9,7 @@ source = "Assignment_%s" % (sys.argv[1],)
 print open(".build/header.rst").read(),
 
 print "=" * len(source)
-print source
+print source.replace("_", " ")
 print "=" * len(source)
 
 print "\nProblems\n========\n"
