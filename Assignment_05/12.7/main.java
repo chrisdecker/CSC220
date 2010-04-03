@@ -19,11 +19,28 @@ To solve the Programming Exercise 12.7 (7e 13.7)
 
 */
 
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+
 /**
  * Driver class
  */
-class main {
+public class main {
     public static void main (String[] args) {
+        TicTacToe game = new TicTacToe();
+        
+        game.setVisible(true);
     }
 }
 
+class TicTacToe extends JFrame {
+    public TicTacToe() {
+        this.setTitle("Tic Tac Toe");
+        this.setLayout(new GridLayout(0, 3, 5, 5));
+        this.setSize(200, 200);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+    }
+}
