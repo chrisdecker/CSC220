@@ -49,7 +49,15 @@ Chapter 12
     limit to the number of components that can be added to to a
     `FlowLayout` container?
     
+    `FlowLayout` is a layout manager that arranges components in a row
+    in the order they are added, wrapping automatically when the
+    components fill the horizontal space.
     
+    .. code-block:: java
+        
+        container.add(component);
+    
+    Limited only in how many components fit on the screen.
 
 10. Describe `BorderLayout`. How do you create a `BorderLayout`
     manager? How do you add a component to a `BorderLayout` container?
@@ -96,7 +104,7 @@ Chapter 12
         panel.add(jbt);
         panel.add(jbt);
     
-    
+     Only the last one is shown. No and no.
 
 22. Can a border or an icon be shared by GUI components?
     
