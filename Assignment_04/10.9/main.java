@@ -83,22 +83,46 @@ class main {
     }
 }
 
+/**
+ * A simple representation of a class roster.
+ * 
+ * Stores the course title and a simple list of the names of the
+ * students.
+ * 
+ */
 class Course {
     private String courseName;
-    String[] students = new String[2];
-    int enrolled;
-    boolean sorted;
+    private String[] students = new String[2];
+    private int enrolled;
+    private boolean sorted;
     
+    /**
+     * Construct a new course with the specified title.
+     * 
+     * @param String courseName
+     * 
+     */
     public Course(String courseName) {
         this.courseName = courseName;
     }
     
+    /**
+     * Add a new student to the course.
+     * 
+     * Appends new student to the end of the list and increases
+     * enrollment count. Marks list as unsorted.
+     * 
+     * Increases array size if necessary.
+     * 
+     * @param String student
+     * 
+     * @return Course -- `this` reference. Generative function.
+     * 
+     */
     public Course addStudent(String student) {
         // check that there is space in the array.
         if(this.enrolled >= this.students.length) {
             // make a larger array if there isn't.
-            //System.out.printf("Expand array from %d to %d\n",
-            //    this.students.length, (int)(this.students.length * 1.5));
             
             String[] newArray = new String[(int)(this.enrolled * 1.5)];
             
@@ -118,6 +142,14 @@ class Course {
         return this;
     }
     
+    /**
+     * Removes a student from the course roster.
+     * 
+     * @param String student
+     * 
+     * @return Course -- `this` reference. Generative function.
+     * 
+     */
     public Course dropStudent(String student) {
         int index = this.findStudent(student);
         
@@ -139,11 +171,33 @@ class Course {
         return this;
     }
     
+    /**
+     * Finds the index of a student by name.
+     * 
+     * This result will be invalid if another student is added and the
+     * list is subsequently sorted!
+     * 
+     * Name must match exactly: search is performed by built-in
+     * Arrays.binarySearch method.
+     * 
+     * @param String student
+     * 
+     * @return int index
+     * 
+     */
     public int findStudent(String student) {
         this.sort();
         return Arrays.binarySearch(this.students, 0, this.enrolled, student);
     }
     
+    /**
+     * Sorts the student list (if it needs it.)
+     * 
+     * Sorting is performed by built-in Arrays.sort() method
+     * 
+     * @return Course -- `this` reference. Generative function.
+     * 
+     */
     public Course sort() {
         if(!this.sorted) {
             Arrays.sort(this.students, 0, this.enrolled, null);
@@ -152,6 +206,15 @@ class Course {
         return this;
     }
     
+    /**
+     * Clears the course, removing all students, but not the course
+     * title.
+     * 
+     * Also returns the roster array to default length.
+     * 
+     * @return Course -- `this` reference. Generative function.
+     * 
+     */
     public Course clear() {
         String[] newData = new String[2];
         
@@ -162,6 +225,18 @@ class Course {
         return this;
     }
     
+    /**
+     * Creates a human-readable representation of the course.
+     * 
+     * Result is a restructuredText formatted table containing the
+     * course title, number of students, and slots left before the
+     * array is increased in the header, as well as each student and
+     * the array-index that his name is found at as columns in the
+     * table.
+     * 
+     * @return String
+     * 
+     */
     public String toString() {
         this.sort();
         
