@@ -114,7 +114,7 @@ Chapter 12
         
         import javax.swing.*;
         
-        public class Text {
+        public class Test {
             public static void main(String[] args) {
                 JButton jbtOK= new JButton("OK");
                 System.out.println(jbtOK.isVisible());
@@ -123,7 +123,10 @@ Chapter 12
             }
         }
     
-    
+    ::
+        
+        true
+        false
 
 20. What happens if you add a button to a container several times, as
     shown below? DOes it cause syntax errors? Does it cause runtime
