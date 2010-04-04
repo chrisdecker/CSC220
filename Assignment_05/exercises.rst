@@ -144,7 +144,7 @@ Chapter 12
 
 22. Can a border or an icon be shared by GUI components?
     
-    
+    Yes
 
 
 
