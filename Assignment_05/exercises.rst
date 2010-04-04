@@ -98,6 +98,15 @@ Chapter 12
 
 16. How do you create a font? How do you find all available fonts on
     your system?
+    
+    .. code-block:: java
+        
+        import java.awt.Font;
+        import java.awt.GraphicsEnvironment;
+        
+        Font sans = new Font("SansSerif");
+        
+        Font[] fonts = GraphicsEnvironment.getAllFonts();
 
 18. Show the output of the following code:
     
