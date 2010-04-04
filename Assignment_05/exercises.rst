@@ -82,6 +82,11 @@ Chapter 12
     
     .. code-block:: java
         
+        import java.awt.FlowLayout;
+        import javax.swing.*;
+        
+        JPanel container = new JPanel(new FlowLayout(5, 5));
+        jButton compontent = new JButton("Close");
         container.add(component);
 
 14. Since a GUI component class such as a JButton is a subclass of
