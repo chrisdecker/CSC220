@@ -66,6 +66,12 @@ Chapter 12
 
 12. What is the default layout manager for a `JPanel`? How do you add a
     component to a JPanel?
+    
+    Default is `FlowLayout.
+    
+    .. code-block:: java
+        
+        container.add(component);
 
 14. Since a GUI component class such as a JButton is a subclass of
     `Container`, can you add components into a button?
