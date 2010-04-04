@@ -33,14 +33,18 @@ Chapter 12
     
     .. code-block:: java
         
-        Component c1 = new Component();
-        JComponent c2 = new JComponent(); // Incorrect. JComponent is abstract.
-        Component c3 = new JButton();
-        JComponent c4 = new JButton();
-        Container c5 = new JButton();
-        c4.add(c4);
-        Object c6 = new JButton();
-        c5.add(c6);
+        Component c1 = new Component();   // Incorrect. Component is
+                                          // abstract.
+        JComponent c2 = new JComponent(); // Incorrect. JComponent is
+                                          // also abstract.
+        Component c3 = new JButton();     // Correct.
+        JComponent c4 = new JButton();    // Correct.
+        Container c5 = new JButton();     // Correct.
+        c4.add(c4);                       // Correct.
+        Object c6 = new JButton();        // Correct.
+        c5.add(c6);                       // Incorrect.
+                                          // Container.add(Object)
+                                          // doesn't exist.
     
     
 
