@@ -62,7 +62,18 @@ Chapter 12
 10. Describe `BorderLayout`. How do you create a `BorderLayout`
     manager? How do you add a component to a `BorderLayout` container?
     
+    `BorderLayout` layout manager lays out components into five areas
+    (the borders and center of the container) according to a flag passed
+    with the `Container.add()` method.
     
+    .. code-block:: java
+        
+        import java.awt.BorderLayout;
+        import javax.swing.*;
+        
+        JPanel container = new JPanel(new BorderLayout(5, 5));
+        jButton compontent = new JButton("Center");
+        container.add(component, BorderLayout.CENTER);
 
 12. What is the default layout manager for a `JPanel`? How do you add a
     component to a JPanel?
