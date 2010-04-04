@@ -13,6 +13,7 @@ Chapter 12
     draws the components directly.
 
 4.  Determine whether the following statements are true or false:
+    
     * You can add a button to a frame.
     * You can add a frame to a panel.
     * You can add a panel to a frame.
@@ -80,7 +81,7 @@ Chapter 12
 12. What is the default layout manager for a `JPanel`? How do you add a
     component to a JPanel?
     
-    Default is `FlowLayout.
+    Default is `FlowLayout`.
     
     .. code-block:: java
         
