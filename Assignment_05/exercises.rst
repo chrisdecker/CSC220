@@ -106,7 +106,10 @@ Chapter 12
         
         Font sans = new Font("SansSerif");
         
-        Font[] fonts = GraphicsEnvironment.getAllFonts();
+        GraphicsEnvironment env = GraphicsEnvironment.
+            getlocalGraphicsEnvironment();
+        
+        String[] fontnames = env.getAvailableFontFamilyNames();
 
 18. Show the output of the following code:
     
