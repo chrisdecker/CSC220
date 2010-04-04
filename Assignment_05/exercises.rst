@@ -45,8 +45,6 @@ Chapter 12
         c5.add(c6);                       // Incorrect.
                                           // Container.add(Object)
                                           // doesn't exist.
-    
-    
 
 8.  Describe `FlowLayout`. How do you create a `FlowLayout` manager?
     How do you add a component to a `FlowLayout` container? Is there a
@@ -96,7 +94,7 @@ Chapter 12
 14. Since a GUI component class such as a JButton is a subclass of
     `Container`, can you add components into a button?
     
-    
+    Yes.
 
 16. How do you create a font? How do you find all available fonts on
     your system?
