@@ -20,7 +20,7 @@ To solve the Programming Exercise 17.17 (7e 16.7)
 /**
  * Driver class
  */
-class main {
+public class main {
     public static void main (String[] args) {
     }
 }
