@@ -17,11 +17,46 @@ To solve the Programming Exercise 17.17 (7e 16.7)
 
 */
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+
 /**
  * Driver class
  */
 public class main {
     public static void main (String[] args) {
+        CalendarWindow window = new CalendarWindow();
+        
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setVisible(true);
     }
 }
 
+class CalendarWindow extends JFrame {
+    JLabel date = new JLabel();
+    JLabel day_names[] = new JLabel[7];
+    JLabel days[] = new JLabel[31];
+    
+    CalendarWindow() {
+        this.setLayout(new GridLayout(0,1,5,5));
+        this.setSize(400,300);
+        
+        JPanel day_labels = new JPanel(new GridLayout(1,0,5,5));
+        
+        for(int i = 0; i < this.day_names.length; i++) {
+            this.day_names[i] = new JLabel();
+            day_labels.add(this.day_names[i]);
+        }
+        
+        JPanel day_grid = new JPanel(new GridLayout(0,7,5,5));
+        
+        for (int i = 0; i < this.days.length; i++) {
+            this.days[i] = new JLabel();
+            day_grid.add(this.days[i]);
+        }
+        
+        
+    }
+}
