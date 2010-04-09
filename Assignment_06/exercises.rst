@@ -1,0 +1,82 @@
+Chapter 17
+==========
+1.  How do you create a button labeled OK? How do you change text on a
+    button? How do you set an icon, pressed icon, rollover icon in a
+    button?
+    
+    
+
+2.  Given a ``JButton`` object ``jbtOk``, wrire statements to set the
+    button's foreground to red, background to yellow, mnemonic to 'K',
+    tooltip text to "Click OK to proceed", horizontal alignment to
+    ``RIGHT``, vertical alignment to ``BOTTOM``, horizontal text
+    position to ``LEFT``, vertical text position to ``TOP`` and icon
+    text gap to 5.
+    
+    
+
+3.  How do you create a check box? How do you create a check box with
+    the box checked initially? How do you determine whether a check box
+    is selected?
+    
+    
+
+4.  How do you create a radio button? How do you create a radio button
+    with the button selected initially? How do you create a radio button
+    group? How do you determine whether a radio button is selected?
+    
+    
+
+5.  (wrote down wrong question)
+    
+    Oops.
+
+6.  How do you create a label named "Address"? How do you change the
+    name on a label? How do you set an icon in a label?
+    
+    
+
+7.  Given a ``JLabel`` object ``jlbMap``, write statements to set the
+    label's foreground to red, background to yellow, mnemonic to 'K',
+    tooltip text to "Click OK to proceed", horizontal alignment to
+    ``RIGHT``, vertical alignment to ``BOTTOM``, horizontal text
+    position to ``LEFT``, vertical text position to ``TOP`` and icon
+    text gap to 5.
+    
+    
+
+8.  How do you create a text field with ten columns and the default text
+    "Welcome to Java"? How do you create write the code the check
+    whether a text field is empty?
+    
+    
+
+9.  How do you create a text area with 10 rows and 20 columns? How do
+    you insert three lines into the text area? How create a scrollable
+    text area?
+    
+    
+
+10. How do you create a combo box, add three items to it, and retrieve
+    a selected item?
+    
+    
+
+11. How do you create a list with an array of strings?
+    
+    
+
+12. How do you create a horizontal scrollbar? What event does a scroll
+    bar fire?
+    
+    
+
+13. How do you create a vertical slider? What event does a vertical
+    slider fire?
+    
+    
+
+14. Explain how to create and show multiple frames in an application.
+    
+    
+
