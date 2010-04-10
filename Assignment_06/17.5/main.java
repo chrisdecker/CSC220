@@ -17,44 +17,11 @@ To solve the Programming Exercise 17.5 (7e 16.5)
 
 */
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
-
 /**
  * Driver class
  */
 public class main {
     public static void main (String[] args) {
-        ConvertMileKilometer window = new ConvertMileKilometer();
-        
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
-        
     }
 }
 
-class ConvertMileKilometer extends JFrame {
-    JTextField txt_miles = new JTextField();
-    JTextField txt_kilos = new JTextField();
-    
-    ConvertMileKilometer() {
-        this.setLayout(new BorderLayout(5,5));
-        this.setSize(300,75);
-        
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(0,2,5,5));
-        this.add(panel);
-        
-        panel.add(new JLabel("Miles"));
-        this.txt_miles.setColumns(15);
-        panel.add(this.txt_miles);
-        
-        panel.add(new JLabel("Kilometers"));
-        this.txt_kilos.setColumns(15);
-        panel.add(this.txt_kilos);
-    }
-}
