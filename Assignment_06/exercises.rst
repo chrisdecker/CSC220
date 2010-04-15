@@ -51,9 +51,9 @@ Chapter 17
     
     
 
-5.  (wrote down wrong question)
+5.  List at least five properties defined in the AbstractButton class.
     
-    Oops.
+    
 
 6.  How do you create a label named "Address"? How do you change the
     name on a label? How do you set an icon in a label?
