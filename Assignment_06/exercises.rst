@@ -17,14 +17,27 @@ Chapter 17
         btnOk.setRolloverIcon(new ImageIcon("images/hover.png"))
         btnOk.setPressedIcon(new ImageIcon("images/click.png"))
 
-2.  Given a ``JButton`` object ``jbtOk``, wrire statements to set the
+2.  Given a ``JButton`` object ``jbtOk``, write statements to set the
     button's foreground to red, background to yellow, mnemonic to 'K',
     tooltip text to "Click OK to proceed", horizontal alignment to
     ``RIGHT``, vertical alignment to ``BOTTOM``, horizontal text
     position to ``LEFT``, vertical text position to ``TOP`` and icon
     text gap to 5.
     
-    
+    .. code-block:: java
+        
+        import java.awt.Color;
+        import java.awt.event.KeyEvent;
+        
+        jbtOk.setForeground(Color.RED);
+        jbtOk.setBackground(Color.YELLOW);
+        jbtOk.setMnemonic(KeyEvent.VK_K);
+        jbtOk.setTooltipText("Click OK to proceed");
+        jbtOk.setHorizontalAlignment(JBUtton.RIGHT_ALIGNMENT);
+        jbtOk.setVerticalAlignment(JButton.BOTTOM_ALIGNMENT);
+        jbtOk.setHorizontalTextPosition(JButton.LEFT_ALIGNMENT);
+        jbtOk.setVerticalTextPosition(JButton.TOP_ALIGNMENT);
+        jbtOk.setIconTextGap(5);
 
 3.  How do you create a check box? How do you create a check box with
     the box checked initially? How do you determine whether a check box
