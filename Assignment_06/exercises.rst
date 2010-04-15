@@ -71,7 +71,16 @@ Chapter 17
 6.  How do you create a label named "Address"? How do you change the
     name on a label? How do you set an icon in a label?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JLabel;
+        import javax.swing.ImageIcon;
+        
+        JLabel lblAddress = new JLabel("Address");
+        
+        lblAddress.setText("Not Address");
+        
+        lblAddress.setIcon(new ImageIcon("images/icon.png"))
 
 7.  Given a ``JLabel`` object ``jlbMap``, write statements to set the
     label's foreground to red, background to yellow, mnemonic to 'K',
