@@ -108,7 +108,14 @@ Chapter 17
     "Welcome to Java"? How do you create write the code the check
     whether a text field is empty?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JTextField;
+        
+        JTextField txtBox = new JTextField("Welcome to Java");
+        txtBox.setColumns(10);
+        
+        txtBox.getText().length();
 
 9.  How do you create a text area with 10 rows and 20 columns? How do
     you insert three lines into the text area? How create a scrollable
