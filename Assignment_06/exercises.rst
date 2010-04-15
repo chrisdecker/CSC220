@@ -47,15 +47,21 @@ Chapter 17
         
         import javax.swing.JCheckBox;
         
-        JCheckBox chkBox = new JCheckBox("Chech", true);
+        JRadioButton chkBox = new JRadioButton("Rad", true);
         
-        chkBox.isSelected();
+        JRadioButton.isSelected();
 
 4.  How do you create a radio button? How do you create a radio button
     with the button selected initially? How do you create a radio button
     group? How do you determine whether a radio button is selected?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JRadioButton;
+        
+        JCheckBox chkBox = new JCheckBox("Chech", true);
+        
+        chkBox.isSelected();
 
 5.  List at least five properties defined in the AbstractButton class.
     
