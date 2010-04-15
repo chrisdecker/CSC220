@@ -32,8 +32,8 @@ Chapter 17
         jbtOk.setForeground(Color.RED);
         jbtOk.setBackground(Color.YELLOW);
         jbtOk.setMnemonic(KeyEvent.VK_K);
-        jbtOk.setTooltipText("Click OK to proceed");
-        jbtOk.setHorizontalAlignment(JBUtton.RIGHT_ALIGNMENT);
+        jbtOk.setToolTipText("Click OK to proceed");
+        jbtOk.setHorizontalAlignment(JButton.RIGHT_ALIGNMENT);
         jbtOk.setVerticalAlignment(JButton.BOTTOM_ALIGNMENT);
         jbtOk.setHorizontalTextPosition(JButton.LEFT_ALIGNMENT);
         jbtOk.setVerticalTextPosition(JButton.TOP_ALIGNMENT);
@@ -97,7 +97,7 @@ Chapter 17
         jlbMap.setForeground(Color.RED);
         jlbMap.setBackground(Color.YELLOW);
         jlbMap.setMnemonic(KeyEvent.VK_K);
-        jlbMap.setTooltipText("Click OK to proceed");
+        jlbMap.setToolTipText("Click OK to proceed");
         jlbMap.setHorizontalAlignment(JLabel.RIGHT_ALIGNMENT);
         jlbMap.setVerticalAlignment(JLabel.BOTTOM_ALIGNMENT);
         jlbMap.setHorizontalTextPosition(JLabel.LEFT_ALIGNMENT);
