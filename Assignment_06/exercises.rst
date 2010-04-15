@@ -89,7 +89,20 @@ Chapter 17
     position to ``LEFT``, vertical text position to ``TOP`` and icon
     text gap to 5.
     
-    
+    .. code-block::
+        
+        import java.awt.Color;
+        import java.awt.event.KeyEvent;
+        
+        jlbMap.setForeground(Color.RED);
+        jlbMap.setBackground(Color.YELLOW);
+        jlbMap.setMnemonic(KeyEvent.VK_K);
+        jlbMap.setTooltipText("Click OK to proceed");
+        jlbMap.setHorizontalAlignment(JLabel.RIGHT_ALIGNMENT);
+        jlbMap.setVerticalAlignment(JLabel.BOTTOM_ALIGNMENT);
+        jlbMap.setHorizontalTextPosition(JLabel.LEFT_ALIGNMENT);
+        jlbMap.setVerticalTextPosition(JLabel.TOP_ALIGNMENT);
+        jlbMap.setIconTextGap(5);
 
 8.  How do you create a text field with ten columns and the default text
     "Welcome to Java"? How do you create write the code the check
