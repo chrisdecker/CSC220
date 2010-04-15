@@ -53,7 +53,20 @@ Chapter 17
 
 5.  List at least five properties defined in the AbstractButton class.
     
-    
+    CONTENT_AREA_FILLED_CHANGED_PROPERTY 
+        Identifies a change to having the button paint the content
+        area.
+    DISABLED_ICON_CHANGED_PROPERTY 
+        Identifies a change to the icon used when the button has been
+        disabled.
+    DISABLED_SELECTED_ICON_CHANGED_PROPERTY 
+        Identifies a change to the icon used when the button has been
+        disabled and selected.
+    FOCUS_PAINTED_CHANGED_PROPERTY 
+        Identifies a change to having the border highlighted when
+        focused, or not.
+    HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY 
+        Identifies a change in the button's horizontal alignment.
 
 6.  How do you create a label named "Address"? How do you change the
     name on a label? How do you set an icon in a label?
