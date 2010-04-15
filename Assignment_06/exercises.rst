@@ -4,7 +4,18 @@ Chapter 17
     button? How do you set an icon, pressed icon, rollover icon in a
     button?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JButton;
+        import javax.swing.ImageIcon;
+        
+        JButton btnOk = new JButton("OK");
+        
+        btnOk.setText("Not Ok");
+        
+        btnOk.setIcon(new ImageIcon("images/icon.png"))
+        btnOk.setRolloverIcon(new ImageIcon("images/hover.png"))
+        btnOk.setPressedIcon(new ImageIcon("images/click.png"))
 
 2.  Given a ``JButton`` object ``jbtOk``, wrire statements to set the
     button's foreground to red, background to yellow, mnemonic to 'K',
