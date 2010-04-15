@@ -43,7 +43,13 @@ Chapter 17
     the box checked initially? How do you determine whether a check box
     is selected?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JCheckBox;
+        
+        JCheckBox chkBox = new JCheckBox("Chech", true);
+        
+        chkBox.isSelected();
 
 4.  How do you create a radio button? How do you create a radio button
     with the button selected initially? How do you create a radio button
