@@ -163,7 +163,13 @@ Chapter 17
 
 11. How do you create a list with an array of strings?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JList;
+        
+        String[] data = {"one", "two", "three", "five", "eight"};
+        JList list = new JList(data);
+        
 
 12. How do you create a horizontal scrollbar? What event does a scroll
     bar fire?
