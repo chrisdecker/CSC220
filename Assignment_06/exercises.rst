@@ -130,10 +130,22 @@ Chapter 17
         txtBox.getText().length();
 
 9.  How do you create a text area with 10 rows and 20 columns? How do
-    you insert three lines into the text area? How create a scrollable
-    text area?
+    you insert three lines into the text area? How do you create a
+    scrollable text area?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JScrollPane;
+        import javax.swing.JTextArea;
+        
+        JTextArea txtArea = new JTextArea();
+        txtArea.setColumns(20);
+        txtArea.setRows(10);
+        
+        txtArea.replaceSelection("\n\n\n");
+        
+        JScrollPane scrlPane =new JScrollPane();
+        scrlPane.add(txtArea);
 
 10. How do you create a combo box, add three items to it, and retrieve
     a selected item?
