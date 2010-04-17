@@ -174,7 +174,11 @@ Chapter 17
 12. How do you create a horizontal scrollbar? What event does a scroll
     bar fire?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JScrollBar;
+        
+        JScrollBar scrlBar = new JScrollBar(JScrollBar.HORIZONTAL);
 
 13. How do you create a vertical slider? What event does a vertical
     slider fire?
