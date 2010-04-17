@@ -150,7 +150,16 @@ Chapter 17
 10. How do you create a combo box, add three items to it, and retrieve
     a selected item?
     
-    
+    .. code-block:: java
+        
+        import javax.swing.JComboBox;
+        
+        JComboBox comboBox = new JComboBox();
+        comboBox.addItem("Item 0");
+        comboBox.addItem("Item 1");
+        comboBox.addItem("Item 2");
+        
+        comboBox.getSelectedItem();
 
 11. How do you create a list with an array of strings?
     
