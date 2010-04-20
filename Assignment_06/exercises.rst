@@ -205,5 +205,30 @@ Chapter 17
 
 14. Explain how to create and show multiple frames in an application.
     
+    Create two JFrames and show them.
     
+    I had expected that the first frame would block until dismissed,
+    requiring the acrobatics in the ``MultipleWindowsDemo.java``
+    example to summon a second one. Fortunately, I tested this with a
+    simple bit of code, which creates and shows 10 windows:
+    
+    .. code-block:: java
+        
+        import javax.swing.JFrame;
+
+        public class Test {
+            public static void main(String[] args) {
+                for(int i = 0; i < 10; i++) {
+                    JFrame frame = new JFrame();
+                    frame.setSize(50*i+50, 50*i+50);
+                    frame.setTitle(""+i);
+                    frame.setVisible(true);
+                }
+            }
+        }
+    
+    Of course, those acrobatics are still needed for windows that need
+    to appear in response to something, but the question doesn't
+    specify that.
+        
 
