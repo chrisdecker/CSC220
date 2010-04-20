@@ -101,7 +101,7 @@ Chapter 17
     position to ``LEFT``, vertical text position to ``TOP`` and icon
     text gap to 5.
     
-    .. code-block::
+    .. code-block:: java
         
         import java.awt.Color;
         import java.awt.event.KeyEvent;
@@ -180,7 +180,7 @@ Chapter 17
         
         JScrollBar scrlBar = new JScrollBar(JScrollBar.HORIZONTAL);
     
-    Scrollbars generate ``changeEvent``s, among others, such as
+    Scrollbars generate ``changeEvent``\ s, among others, such as
     mouse-wheels and key presses (space, arrow, page buttons, home,
     end, etc.)
 
