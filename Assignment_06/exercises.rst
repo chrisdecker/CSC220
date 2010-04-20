@@ -187,7 +187,21 @@ Chapter 17
 13. How do you create a vertical slider? What event does a vertical
     slider fire?
     
+    .. code-block:: java
+        
+        import javax.swing.JSlider;
+        
+        // this slider goes up to twelve.
+        // http://xkcd.com/670/
+        // A really smart engineer would pitch a scale of one through
+        // three, and note that most of the time they could put the
+        // volume on two loud.
+        JSlider spinalTapAmplifierVolumelSliderPatentPending =
+            new JSlider(JSlider.VERTICAL, 1,12,0);
     
+    Vertical sliders--or rather, sliders in general since a vertical
+    slider is just a regular slider that has been told to be
+    vertical--fire ``changeEvent`` when they are, uh... changed.
 
 14. Explain how to create and show multiple frames in an application.
     
