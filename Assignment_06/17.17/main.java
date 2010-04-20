@@ -100,17 +100,19 @@ class CalendarWindow extends JFrame {
         int first = new GregorianCalendar(date.get(date.YEAR),
             date.get(date.MONTH), 1).get(date.DAY_OF_WEEK);
         
-        // populate the day of month grid
-        // loops from 1 to the number of days in the month, plus an
-        // some for the weekday offset.
-        for (int i = 1; i < date.getActualMaximum(date.DAY_OF_MONTH)+first; i++) {
+        // retrieve the days in the month
             // The ACTUAL maximum because I really want the length of
             // the month, and not the maximum value the field holds.
             //
             // for the future: how about getMaximum(DAY_OF_MONTH) for
             // length of month and getMaximumValue(DAY_OF_MONTH) for
             // the maximum value the field supports.
-            
+        int days_in_month = date.getActualMaximum(date.DAY_OF_MONTH);
+        
+        // populate the day of month grid
+        // loops from 1 to the number of days in the month, plus an
+        // offset some for the weekday offset.
+        for (int i = 1; i < days_in_month+first; i++) { 
             // offset the labels so the first fall on the correct
             // weekday
             if(i-first+1 > 0) {
