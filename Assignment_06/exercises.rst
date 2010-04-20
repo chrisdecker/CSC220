@@ -179,6 +179,10 @@ Chapter 17
         import javax.swing.JScrollBar;
         
         JScrollBar scrlBar = new JScrollBar(JScrollBar.HORIZONTAL);
+    
+    Scrollbars generate ``changeEvent``s, among others, such as
+    mouse-wheels and key presses (space, arrow, page buttons, home,
+    end, etc.)
 
 13. How do you create a vertical slider? What event does a vertical
     slider fire?
