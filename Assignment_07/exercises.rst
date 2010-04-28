@@ -178,12 +178,12 @@ Chapter 20
     
 
 2.  Write a recursive mathematical definition for computing
-    2\ :super:`*n*` for a positive integer *n*.
+    2\ :sup:`n` for a positive integer *n*.
     
     
 
 3.  Write a recursive mathematical definition for computing
-    *x*\ :super:`*n*` for a positive integer *n* and real number *x*.
+    *x*\ :sup:`n` for a positive integer *n* and real number *x*.
     
     
 
