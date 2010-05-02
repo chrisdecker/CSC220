@@ -14,7 +14,14 @@ Chapter 16
 3.  Can a source have multiple listeners? Can a listener listen on
     multiple sources? Can a source be a listener for itself?
     
-    Yes, yes, and yes.
+    Can a source have multiple listeners?
+        Yes.
+    
+    Can a listener listen on multiple sources?
+        Yes.
+    
+    Can a source be a listener for itself?
+        Yes.
 
 4.  How do you implement a method defined in the listener interface? Do
     you need to implement all the methods defined in the listener
