@@ -45,10 +45,10 @@ Chapter 16
     Yes.
 
 7.  If class ``A`` is an inner class in class ``B``, what is the .class
-    file for ``A``? If class be contains two anonynmous inner classes,
+    file for ``A``? If class B contains two anonynmous inner classes,
     what are the .class file names for these two classes?
     
-    
+    ``B$A.class``, ``B$1.class``, and ``B$2.class``, respectively.
 
 9.  What is wrong in the following code?
     
