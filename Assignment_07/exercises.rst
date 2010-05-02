@@ -42,7 +42,7 @@ Chapter 16
 6.  Can the modifiers ``public``, ``private``, and ``static`` be used
     on inner classes?
     
-    
+    Yes.
 
 7.  If class ``A`` is an inner class in class ``B``, what is the .class
     file for ``A``? If class be contains two anonynmous inner classes,
