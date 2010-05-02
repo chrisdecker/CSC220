@@ -27,7 +27,12 @@ Chapter 16
     you need to implement all the methods defined in the listener
     interface?
     
+    How do you implement a method defined in the listener interface?
+        Implement the interface in a subclass and define the methods
+        it requires.
     
+    Do you need to implement all the methods defined in the listener interface?
+        Yes.
 
 5.  Can an inner class be used in a class other than the class in which
     it nests?
