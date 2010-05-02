@@ -37,7 +37,7 @@ Chapter 16
 5.  Can an inner class be used in a class other than the class in which
     it nests?
     
-    
+    Yes.
 
 6.  Can the modifiers ``public``, ``private``, and ``static`` be used
     on inner classes?
