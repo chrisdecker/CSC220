@@ -3,7 +3,7 @@ Chapter 16
 1.  Can a button fire a ``WindowEvent``? Can a button fire a
     ``MouseEvent``? Can a button fire an ``ActionEvent``?
     
-    
+    No, no, and yes.
 
 2.  Why must a listener be an instance of an appropriate listener
     interface? Explain how to register a listener object and how to
