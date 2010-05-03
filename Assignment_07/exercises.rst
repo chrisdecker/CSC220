@@ -54,12 +54,12 @@ Chapter 16
     
     .. code-block:: java
         
-        import java.swing.*;
+        import javax.swing.*;
         import java.awt.*;
         
         public class Test extends JFrame {
             public Test() {
-                JButton jbtOk = new JButton();
+                JButton jbtOK = new JButton();
                 add(jbtOK);
             }
             
@@ -72,17 +72,24 @@ Chapter 16
             /** Main method omitted */
         }
     
+    * Does not import ``java.awt.event``, but uses that package's
+      contents.
+    * Attempts to reference a variable in the constructor from an inner
+      class.
+    * Fails to properly implement the ActionListener interface (or at
+      least that's what ``javac`` is telling me. Not sure *why*...)
+    
     .. code-block:: java
         
-        import java.swing.*;
-        import java.awt.*;
+        import java.awt.event.*;
+        import javax.swing.*;
         
         public class Test extends JFrame {
             public Test() {
                 JButton jbtOk = new JButton();
                 add(jbtOK);
-                jbtOK.addActionListener(new ActionListener {
-                    public void ActionPerform(ActionEvent e) {
+                jbtOK.addActionListener(new ActionListener () {
+                    public void ActionPerformed(ActionEvent e) {
                         System.out.println(jbtOK.getActionCommand());
                     }
                 } // Something missing here
