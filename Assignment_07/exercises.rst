@@ -9,7 +9,20 @@ Chapter 16
     interface? Explain how to register a listener object and how to
     implement a listener interface.
     
+    The listener must be the right interface because the code that
+    calls the methods in the listener calls certain names. If you
+    somehow put a ``MouseMotionListener`` where an ``ActionEvent``
+    should be, the event engine would attempt to call
+    ``actionPerformed`` method of the ``MouseMotionListener``,
+    which will fail.
     
+    You can register a listener with the appropriate register method
+    for the listener's interface. For example, ``addActionListener``
+    for ``ActionListener``s.
+    
+    Creating an action listener requires implementing the correct
+    interface with a concrete class, whihc can be done as an outer
+    class, and inner class, or an anonymous class.
 
 3.  Can a source have multiple listeners? Can a listener listen on
     multiple sources? Can a source be a listener for itself?
