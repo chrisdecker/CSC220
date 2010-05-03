@@ -110,7 +110,9 @@ Chapter 16
             /** Main method omitted */
         }
     
-    
+    * Missing close parenthesis and semi-colon.
+    * local variable must be ``final`` to be accessed from within an
+      inner class.
 
 11. What is the listener interface for mouse pressed, released,
     clicked, entered, and exited? What is the listener interface for
