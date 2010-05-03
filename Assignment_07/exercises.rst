@@ -118,7 +118,7 @@ Chapter 16
     clicked, entered, and exited? What is the listener interface for
     mouse moved and dragged?
     
-    
+    ``MouseListener`` and ``MouseMotionListener``.
 
 13. Is the ``KeyPressed`` handler invoked after a key is pressed? Is
     the ``KeyReleased`` handler invoked after a key is released? Is the
